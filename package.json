@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/mamuso/ogtojsonservice#readme",
   "dependencies": {
-    "open-graph-scraper": "^3.6.2"
+    "open-graph-scraper": "^4.11.0"
   }
 }
