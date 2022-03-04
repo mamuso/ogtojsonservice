@@ -4,6 +4,8 @@ module.exports = async (req, res) => {
   const options = { url: req.query['url'], timeout: 4000 }
   ogs(options).then((data) => {
     const { error, result, response } = data
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.json(result)
     console.log('error:', error) // This returns true or false. True if there was an error. The error itself is inside the results object.
     console.log('result:', result) // This contains all of the Open Graph results
