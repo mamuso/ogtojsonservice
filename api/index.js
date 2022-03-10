@@ -4,13 +4,10 @@ module.exports = async (req, res) => {
   const options = {
     url: req.query['url'],
     timeout: 4000,
-  }
-  if (req.query['url'].includes('twitter.com')) {
-    options.headers = {
+    headers: {
       'user-agent': 'Googlebot/2.1 (+http://www.google.com/bot.html)',
-    }
+    },
   }
-
   ogs(options).then((data) => {
     const { error, result, response } = data
     res.setHeader('Access-Control-Allow-Credentials', true)
